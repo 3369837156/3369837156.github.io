@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="无重复字符的最长子串中等相关标签相关企业给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。  示例 1: 输入: s &#x3D; “abcabcbb”输出: 3解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。示例 2: 输入: s &#x3D; “bbbbb”输出: 1解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。示例 3: 输入: s &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="third">
+<meta property="og:url" content="http://example.com/2024/01/06/third/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="无重复字符的最长子串中等相关标签相关企业给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。  示例 1: 输入: s &#x3D; “abcabcbb”输出: 3解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。示例 2: 输入: s &#x3D; “bbbbb”输出: 1解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。示例 3: 输入: s &amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-06T05:17:00.000Z">
+<meta property="article:modified_time" content="2024-01-06T05:19:54.073Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>third</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/01/05/SecondDay/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/01/06/third/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/06/third/&text=third"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/06/third/&is_video=false&description=third"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=third&body=Check out this article: http://example.com/2024/01/06/third/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/06/third/&name=third&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/06/third/&t=third"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        third
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">John Doe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-01-06T05:17:00.000Z" class="dt-published" itemprop="datePublished">2024-01-06</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <ol start="3">
+<li>无重复字符的最长子串<br>中等<br>相关标签<br>相关企业<br>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。</li>
+</ol>
+<p>示例 1:</p>
+<p>输入: s &#x3D; “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
+<p>输入: s &#x3D; “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
+<p>输入: s &#x3D; “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p>
+<p>提示：</p>
+<p>0 &lt;&#x3D; s.length &lt;&#x3D; 5 * 104<br>s 由英文字母、数字、符号和空格组成<br>方法一：滑动窗口<br>思路和算法</p>
+<p>我们先用一个例子考虑如何在较优的时间复杂度内通过本题。</p>
+<p>我们不妨以示例一中的字符串 abcabcbb\texttt{abcabcbb}abcabcbb 为例，找出从每一个字符开始的，不包含重复字符的最长子串，那么其中最长的那个字符串即为答案。对于示例一中的字符串，我们列举出这些结果，其中括号中表示选中的字符以及最长的字符串：</p>
+<p>以 (a)bcabcbb\texttt{(a)bcabcbb}(a)bcabcbb 开始的最长字符串为 (abc)abcbb\texttt{(abc)abcbb}(abc)abcbb；<br>以 a(b)cabcbb\texttt{a(b)cabcbb}a(b)cabcbb 开始的最长字符串为 a(bca)bcbb\texttt{a(bca)bcbb}a(bca)bcbb；<br>以 ab(c)abcbb\texttt{ab(c)abcbb}ab(c)abcbb 开始的最长字符串为 ab(cab)cbb\texttt{ab(cab)cbb}ab(cab)cbb；<br>以 abc(a)bcbb\texttt{abc(a)bcbb}abc(a)bcbb 开始的最长字符串为 abc(abc)bb\texttt{abc(abc)bb}abc(abc)bb；<br>以 abca(b)cbb\texttt{abca(b)cbb}abca(b)cbb 开始的最长字符串为 abca(bc)bb\texttt{abca(bc)bb}abca(bc)bb；<br>以 abcab(c)bb\texttt{abcab(c)bb}abcab(c)bb 开始的最长字符串为 abcab(cb)b\texttt{abcab(cb)b}abcab(cb)b；<br>以 abcabc(b)b\texttt{abcabc(b)b}abcabc(b)b 开始的最长字符串为 abcabc(b)b\texttt{abcabc(b)b}abcabc(b)b；<br>以 abcabcb(b)\texttt{abcabcb(b)}abcabcb(b) 开始的最长字符串为 abcabcb(b)\texttt{abcabcb(b)}abcabcb(b)。<br>发现了什么？如果我们依次递增地枚举子串的起始位置，那么子串的结束位置也是递增的！这里的原因在于，假设我们选择字符串中的第 kkk 个字符作为起始位置，并且得到了不包含重复字符的最长子串的结束位置为 rkr_kr<br>k<br>​<br> 。那么当我们选择第 k+1k+1k+1 个字符作为起始位置时，首先从 k+1k+1k+1 到 rkr_kr<br>k<br>​<br>  的字符显然是不重复的，并且由于少了原本的第 kkk 个字符，我们可以尝试继续增大 rkr_kr<br>k<br>​<br> ，直到右侧出现了重复字符为止。</p>
+<p>这样一来，我们就可以使用「滑动窗口」来解决这个问题了：</p>
+<p>我们使用两个指针表示字符串中的某个子串（或窗口）的左右边界，其中左指针代表着上文中「枚举子串的起始位置」，而右指针即为上文中的 rkr_kr<br>k<br>​<br> ；</p>
+<p>在每一步的操作中，我们会将左指针向右移动一格，表示 我们开始枚举下一个字符作为起始位置，然后我们可以不断地向右移动右指针，但需要保证这两个指针对应的子串中没有重复的字符。在移动结束后，这个子串就对应着 以左指针开始的，不包含重复字符的最长子串。我们记录下这个子串的长度；</p>
+<p>在枚举结束后，我们找到的最长的子串的长度即为答案。</p>
+<p>判断重复字符</p>
+<p>在上面的流程中，我们还需要使用一种数据结构来判断 是否有重复的字符，常用的数据结构为哈希集合（即 C++ 中的 std::unordered_set，Java 中的 HashSet，Python 中的 set, JavaScript 中的 Set）。在左指针向右移动的时候，我们从哈希集合中移除一个字符，在右指针向右移动的时候，我们往哈希集合中添加一个字符。</p>
+<p>至此，我们就完美解决了本题。</p>
+<p>C++<br>Java<br>Python3<br>JavaScript<br>Golang<br>var lengthOfLongestSubstring &#x3D; function(s) {<br>    &#x2F;&#x2F; 哈希集合，记录每个字符是否出现过<br>    const occ &#x3D; new Set();<br>    const n &#x3D; s.length;<br>    &#x2F;&#x2F; 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动<br>    let rk &#x3D; -1, ans &#x3D; 0;<br>    for (let i &#x3D; 0; i &lt; n; ++i) {<br>        if (i !&#x3D; 0) {<br>            &#x2F;&#x2F; 左指针向右移动一格，移除一个字符<br>            occ.delete(s.charAt(i - 1));<br>        }<br>        while (rk + 1 &lt; n &amp;&amp; !occ.has(s.charAt(rk + 1))) {<br>            &#x2F;&#x2F; 不断地移动右指针<br>            occ.add(s.charAt(rk + 1));<br>            ++rk;<br>        }<br>        &#x2F;&#x2F; 第 i 到 rk 个字符是一个极长的无重复字符子串<br>        ans &#x3D; Math.max(ans, rk - i + 1);<br>    }<br>    return ans;<br>};<br>复杂度分析</p>
+<p>时间复杂度：O(N)O(N)O(N)，其中 NNN 是字符串的长度。左指针和右指针分别会遍历整个字符串一次。</p>
+<p>空间复杂度：O(∣Σ∣)O(|\Sigma|)O(∣Σ∣)，其中 Σ\SigmaΣ 表示字符集（即字符串中可以出现的字符），∣Σ∣|\Sigma|∣Σ∣ 表示字符集的大小。在本题中没有明确说明字符集，因此可以默认为所有 ASCII 码在 [0,128)[0, 128)[0,128) 内的字符，即 ∣Σ∣&#x3D;128|\Sigma| &#x3D; 128∣Σ∣&#x3D;128。我们需要用到哈希集合来存储出现过的字符，而字符最多有 ∣Σ∣|\Sigma|∣Σ∣ 个，因此空间复杂度为 O(∣Σ∣)O(|\Sigma|)O(∣Σ∣)。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/01/06/third/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/01/06/third/&text=third"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/01/06/third/&is_video=false&description=third"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=third&body=Check out this article: http://example.com/2024/01/06/third/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/01/06/third/&title=third"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/01/06/third/&name=third&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/01/06/third/&t=third"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
