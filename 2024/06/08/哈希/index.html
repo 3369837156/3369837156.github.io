@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="两数之和已解答简单相关标签相关企业提示给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。  你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。 你可以按任意顺序返回答案。 示例 1： 输入：nums &#x3D; [2,7,11,15], target &#x3D; 9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="哈希">
+<meta property="og:url" content="http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="两数之和已解答简单相关标签相关企业提示给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。  你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。 你可以按任意顺序返回答案。 示例 1： 输入：nums &#x3D; [2,7,11,15], target &#x3D; 9">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-08T06:25:33.000Z">
+<meta property="article:modified_time" content="2024-07-18T23:49:04.919Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>哈希</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/05/17/%E6%8A%80%E5%B7%A7/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&text=哈希"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&is_video=false&description=哈希"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=哈希&body=Check out this article: http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&name=哈希&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&t=哈希"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        哈希
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">John Doe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-06-08T06:25:33.000Z" class="dt-published" itemprop="datePublished">2024-06-08</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <ol>
+<li>两数之和<br>已解答<br>简单<br>相关标签<br>相关企业<br>提示<br>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</li>
+</ol>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p>示例 1：</p>
+<p>输入：nums &#x3D; [2,7,11,15], target &#x3D; 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。<br>示例 2：</p>
+<p>输入：nums &#x3D; [3,2,4], target &#x3D; 6<br>输出：[1,2]<br>示例 3：</p>
+<p>输入：nums &#x3D; [3,3], target &#x3D; 6<br>输出：[0,1]</p>
+<p>提示：</p>
+<p>2 &lt;&#x3D; nums.length &lt;&#x3D; 104<br>-109 &lt;&#x3D; nums[i] &lt;&#x3D; 109<br>-109 &lt;&#x3D; target &lt;&#x3D; 109</p>
+<p>方法一：暴力枚举<br>思路及算法</p>
+<p>最容易想到的方法是枚举数组中的每一个数 x，寻找数组中是否存在 target - x。</p>
+<p>当我们使用遍历整个数组的方式寻找 target - x 时，需要注意到每一个位于 x 之前的元素都已经和 x 匹配过，因此不需要再进行匹配。而每一个元素不能被使用两次，所以我们只需要在 x 后面的元素中寻找 target - x。<br>int* twoSum(int* nums, int numsSize, int target, int* returnSize) {<br>    for (int i &#x3D; 0; i &lt; numsSize; ++i) {<br>        for (int j &#x3D; i + 1; j &lt; numsSize; ++j) {<br>            if (nums[i] + nums[j] &#x3D;&#x3D; target) {<br>                int* ret &#x3D; malloc(sizeof(int) * 2);<br>                ret[0] &#x3D; i, ret[1] &#x3D; j;<br>                *returnSize &#x3D; 2;<br>                return ret;<br>            }<br>        }<br>    }<br>    *returnSize &#x3D; 0;<br>    return NULL;<br>}</p>
+<p>方法二：哈希表<br>思路及算法</p>
+<p>注意到方法一的时间复杂度较高的原因是寻找 target - x 的时间复杂度过高。因此，我们需要一种更优秀的方法，能够快速寻找数组中是否存在目标元素。如果存在，我们需要找出它的索引。</p>
+<p>使用哈希表，可以将寻找 target - x 的时间复杂度降低到从 O(N)O(N)O(N) 降低到 O(1)O(1)O(1)。</p>
+<p>这样我们创建一个哈希表，对于每一个 x，我们首先查询哈希表中是否存在 target - x，然后将 x 插入到哈希表中，即可保证不会让 x 和自己匹配。<br>struct hashTable {<br>    int key;<br>    int val;<br>    UT_hash_handle hh;<br>};</p>
+<p>struct hashTable* hashtable;</p>
+<p>struct hashTable* find(int ikey) {<br>    struct hashTable* tmp;<br>    HASH_FIND_INT(hashtable, &amp;ikey, tmp);<br>    return tmp;<br>}</p>
+<p>void insert(int ikey, int ival) {<br>    struct hashTable* it &#x3D; find(ikey);<br>    if (it &#x3D;&#x3D; NULL) {<br>        struct hashTable* tmp &#x3D; malloc(sizeof(struct hashTable));<br>        tmp-&gt;key &#x3D; ikey, tmp-&gt;val &#x3D; ival;<br>        HASH_ADD_INT(hashtable, key, tmp);<br>    } else {<br>        it-&gt;val &#x3D; ival;<br>    }<br>}</p>
+<p>int* twoSum(int* nums, int numsSize, int target, int* returnSize) {<br>    hashtable &#x3D; NULL;<br>    for (int i &#x3D; 0; i &lt; numsSize; i++) {<br>        struct hashTable* it &#x3D; find(target - nums[i]);<br>        if (it !&#x3D; NULL) {<br>            int* ret &#x3D; malloc(sizeof(int) * 2);<br>            ret[0] &#x3D; it-&gt;val, ret[1] &#x3D; i;<br>            *returnSize &#x3D; 2;<br>            return ret;<br>        }<br>        insert(nums[i], i);<br>    }<br>    *returnSize &#x3D; 0;<br>    return NULL;<br>}</p>
+<ol start="2">
+<li>最长连续序列<br>中等<br>相关标签<br>相关企业<br>给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</li>
+</ol>
+<p>请你设计并实现时间复杂度为 O(n) 的算法解决此问题。</p>
+<p>示例 1：</p>
+<p>输入：nums &#x3D; [100,4,200,1,3,2]<br>输出：4<br>解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。<br>示例 2：</p>
+<p>输入：nums &#x3D; [0,3,7,2,5,8,4,6,0,1]<br>输出：9</p>
+<p>提示：</p>
+<p>0 &lt;&#x3D; nums.length &lt;&#x3D; 105<br>-109 &lt;&#x3D; nums[i] &lt;&#x3D; 109</p>
+<p>我们考虑枚举数组中的每个数 x，考虑以其为起点，不断尝试匹配 x+1,x+2,⋯ 是否存在，假设最长匹配到了 x+y，那么以 x 为起点的最长连续序列即为 x,x+1,x+2,⋯,x+y，其长度为 y+1，我们不断枚举并更新答案即可。</p>
+<p>对于匹配的过程，暴力的方法是 O(n) 遍历数组去看是否存在这个数，但其实更高效的方法是用一个哈希表存储数组中的数，这样查看一个数是否存在即能优化至 O(1) 的时间复杂度。</p>
+<p>仅仅是这样我们的算法时间复杂度最坏情况下还是会达到 O(n<br>2<br> )（即外层需要枚举 O(n) 个数，内层需要暴力匹配 O(n) 次），无法满足题目的要求。但仔细分析这个过程，我们会发现其中执行了很多不必要的枚举，如果已知有一个 x,x+1,x+2,⋯,x+y 的连续序列，而我们却重新从 x+1，x+2 或者是 x+y 处开始尝试匹配，那么得到的结果肯定不会优于枚举 x 为起点的答案，因此我们在外层循环的时候碰到这种情况跳过即可。</p>
+<p>那么怎么判断是否跳过呢？由于我们要枚举的数 x 一定是在数组中不存在前驱数 x−1 的，不然按照上面的分析我们会从 x−1 开始尝试匹配，因此我们每次在哈希表中检查是否存在 x−1 即能判断是否需要跳过了。</p>
+<p>增加了判断跳过的逻辑之后，时间复杂度是多少呢？外层循环需要 O(n) 的时间复杂度，只有当一个数是连续序列的第一个数的情况下才会进入内层循环，然后在内层循环中匹配连续序列中的数，因此数组中的每个数只会进入内层循环一次。根据上述分析可知，总时间复杂度为 O(n)，符合题目要求。</p>
+<p>function longestConsecutive(nums: number[]): number {<br>    let num_set: Set<number> &#x3D; new Set();<br>    for(const num of nums){<br>        num_set.add(num);<br>    }<br>    let longestSteak &#x3D; 0;<br>    for(const num of num_set){<br>        if(!num_set.has(num-1)){<br>            let currentNum &#x3D; num;<br>            let currentSteak &#x3D; 1;</p>
+<pre><code>        while(num_set.has(currentNum + 1))&#123;
+            currentNum += 1;
+            currentSteak += 1;
+        &#125;
+
+        longestSteak = Math.max(longestSteak,currentSteak);
+    &#125;
+&#125;
+return longestSteak;
+</code></pre>
+<p>};</p>
+<p>3.字母异位词分组<br>给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。</p>
+<p>字母异位词 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<p>示例 1:</p>
+<p>输入: strs &#x3D; [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”]<br>输出: [[“bat”],[“nat”,”tan”],[“ate”,”eat”,”tea”]]<br>示例 2:</p>
+<p>输入: strs &#x3D; [“”]<br>输出: [[“”]]<br>示例 3:</p>
+<p>输入: strs &#x3D; [“a”]<br>输出: [[“a”]]</p>
+<p>提示：</p>
+<p>1 &lt;&#x3D; strs.length &lt;&#x3D; 104<br>0 &lt;&#x3D; strs[i].length &lt;&#x3D; 100<br>strs[i] 仅包含小写字母</p>
+<p>由于互为字母异位词的两个字符串包含的字母相同，因此对两个字符串分别进行排序之后得到的字符串一定是相同的，故可以将排序之后的字符串作为哈希表的键。</p>
+<p>JavaScript</p>
+<p>var groupAnagrams &#x3D; function(strs) {<br>    const map &#x3D; new Map();<br>    for (let str of strs) {<br>        let array &#x3D; Array.from(str);<br>        array.sort();<br>        let key &#x3D; array.toString();<br>        let list &#x3D; map.get(key) ? map.get(key) : new Array();<br>        list.push(str);<br>        map.set(key, list);<br>    }<br>    return Array.from(map.values());<br>};<br>复杂度分析</p>
+<p>时间复杂度：O(nklogk)，其中 n 是 strs 中的字符串的数量，k 是 strs 中的字符串的的最大长度。需要遍历 n 个字符串，对于每个字符串，需要 O(klogk) 的时间进行排序以及 O(1) 的时间更新哈希表，因此总时间复杂度是 O(nklogk)。</p>
+<p>空间复杂度：O(nk)，其中 n 是 strs 中的字符串的数量，k 是 strs 中的字符串的的最大长度。需要用哈希表存储全部字符串。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&text=哈希"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&is_video=false&description=哈希"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=哈希&body=Check out this article: http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&title=哈希"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&name=哈希&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/06/08/%E5%93%88%E5%B8%8C/&t=哈希"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
